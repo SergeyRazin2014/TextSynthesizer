@@ -62,6 +62,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="FillPromptBuilder.cs" />
     <Compile Include="StringParser.cs" />
+    <Compile Include="TextSplitter.cs" />
     <Compile Include="Translater.cs" />
     <Compile Include="VoiceSource.cs" />
     <Compile Include="ExcelHelper.cs" />

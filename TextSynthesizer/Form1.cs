@@ -287,6 +287,38 @@ namespace TextSynthesizer
 
 		}
 
-		
+		private void SetDataToGridView(List<RowRuEng> rowRuEng)
+		{
+			foreach (var item in rowRuEng)
+			{
+				// добавляю строки в таблицу
+				DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+				dataGridView1.Rows.Add(row);
+			}
+
+
+			var counter = 0;
+			foreach (var rowRuEn in rowRuEng)
+			{
+				var rows = dataGridView1.Rows;
+
+				if (rowRuEn == null)
+					continue;
+
+				dataGridView1.Rows[counter].Cells[0].Value = rowRuEn.RuStr;
+				dataGridView1.Rows[counter].Cells[1].Value = rowRuEn.EnStr;
+
+				counter++;
+			}
+		}
+
+		private void btnSplitRuEn_Click(object sender, EventArgs e)
+		{
+			var strList = File.ReadAllLines(_filePath);
+
+			var rowRuEngList = new TextSplitter().SplitStringMany(strList);
+
+			SetDataToGridView(rowRuEngList);
+		}
 	}
 }

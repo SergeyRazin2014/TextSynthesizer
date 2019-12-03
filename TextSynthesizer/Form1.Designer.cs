@@ -50,25 +50,33 @@
 			this.tbWaitAfterRu = new System.Windows.Forms.NumericUpDown();
 			this.label4 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnSplitRuEn = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbSpeachSpeed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbWaitAfterEn)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbRepeatCount)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbWaitAfterRu)).BeginInit();
+			this.tabPage2.SuspendLayout();
+			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// richTextBox1
 			// 
-			this.richTextBox1.Location = new System.Drawing.Point(15, 316);
+			this.richTextBox1.Location = new System.Drawing.Point(15, 386);
 			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(506, 145);
+			this.richTextBox1.Size = new System.Drawing.Size(506, 75);
 			this.richTextBox1.TabIndex = 2;
 			this.richTextBox1.Text = "";
 			// 
 			// btnSpeak
 			// 
-			this.btnSpeak.Location = new System.Drawing.Point(15, 287);
+			this.btnSpeak.Location = new System.Drawing.Point(6, 201);
 			this.btnSpeak.Name = "btnSpeak";
 			this.btnSpeak.Size = new System.Drawing.Size(75, 23);
 			this.btnSpeak.TabIndex = 3;
@@ -105,7 +113,7 @@
 			// 
 			// btnTranslate
 			// 
-			this.btnTranslate.Location = new System.Drawing.Point(105, 287);
+			this.btnTranslate.Location = new System.Drawing.Point(87, 201);
 			this.btnTranslate.Name = "btnTranslate";
 			this.btnTranslate.Size = new System.Drawing.Size(110, 23);
 			this.btnTranslate.TabIndex = 6;
@@ -167,7 +175,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(15, 80);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(511, 195);
+			this.tabControl1.Size = new System.Drawing.Size(511, 271);
 			this.tabControl1.TabIndex = 13;
 			// 
 			// tabPage1
@@ -176,16 +184,18 @@
 			this.tabPage1.Controls.Add(this.tbSpeachSpeed);
 			this.tabPage1.Controls.Add(this.label6);
 			this.tabPage1.Controls.Add(this.label5);
+			this.tabPage1.Controls.Add(this.btnTranslate);
 			this.tabPage1.Controls.Add(this.checkBOnly1);
 			this.tabPage1.Controls.Add(this.tbWaitAfterEn);
 			this.tabPage1.Controls.Add(this.tbRepeatCount);
 			this.tabPage1.Controls.Add(this.tbWaitAfterRu);
+			this.tabPage1.Controls.Add(this.btnSpeak);
 			this.tabPage1.Controls.Add(this.label4);
 			this.tabPage1.Controls.Add(this.label3);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(503, 169);
+			this.tabPage1.Size = new System.Drawing.Size(503, 245);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -298,28 +308,71 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.btnSplitRuEn);
+			this.tabPage2.Controls.Add(this.panel1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(503, 169);
+			this.tabPage2.Size = new System.Drawing.Size(503, 245);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.dataGridView1);
+			this.panel1.Location = new System.Drawing.Point(8, 6);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(489, 157);
+			this.panel1.TabIndex = 0;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+			this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(489, 157);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "РУССКИЙ";
+			this.Column1.Name = "Column1";
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "АНГЛИЙСКИЙ";
+			this.Column2.Name = "Column2";
+			// 
+			// btnSplitRuEn
+			// 
+			this.btnSplitRuEn.Location = new System.Drawing.Point(8, 189);
+			this.btnSplitRuEn.Name = "btnSplitRuEn";
+			this.btnSplitRuEn.Size = new System.Drawing.Size(75, 23);
+			this.btnSplitRuEn.TabIndex = 1;
+			this.btnSplitRuEn.Text = "Split";
+			this.btnSplitRuEn.UseVisualStyleBackColor = true;
+			this.btnSplitRuEn.Click += new System.EventHandler(this.btnSplitRuEn_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(540, 502);
+			this.ClientSize = new System.Drawing.Size(586, 502);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.tbTakeRowCount);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.btnTranslate);
 			this.Controls.Add(this.tbFilePath);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnSelectFile);
-			this.Controls.Add(this.btnSpeak);
 			this.Controls.Add(this.richTextBox1);
 			this.Name = "Form1";
 			this.Text = "Говорун";
@@ -330,6 +383,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.tbWaitAfterEn)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbRepeatCount)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbWaitAfterRu)).EndInit();
+			this.tabPage2.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -358,6 +414,11 @@
 		private System.Windows.Forms.NumericUpDown tbSpeachSpeed;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.CheckBox checkBoxAutoCalc;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.Button btnSplitRuEn;
 	}
 }
 
